@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#d99aa5">
+  <title>Mis 15 años | María Victoria</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <main>
+    <section class="sobre-pantalla" id="inicio" aria-label="Sobre de invitación">
+      <div class="sobre-contenido">
+        <p class="sobre-intro">Una invitación muy especial</p>
+        <h1 class="nombre-portada">María Victoria</h1>
+        <p class="frase-portada">Hay momentos que dejan huella…<br>y este será uno de ellos.</p>
+        <button class="boton boton-claro" id="botonAbrir">Toca el sobre para abrir</button>
+        <p class="instruccion">Una celebración, un sueño, una noche inolvidable</p>
+      </div>
+    </section>
+
+    <section class="invitacion oculto" id="invitacion">
+      <header class="hero">
+        <div class="destellos">✧ ✦ ✧</div>
+        <p class="eyebrow">Con mucha ilusión te invito a celebrar</p>
+        <h1>Mis <span>15</span> años</h1>
+        <img src="images/corona1.png" alt="Corona" class="icono-corona">
+        <h2>María Victoria</h2>
+        <p class="hero-frase">Un sueño hecho realidad,<br>una nueva etapa por comenzar…</p>
+
+        <div class="disco-contenedor">
+          <button id="botonMusica" class="disco" aria-label="Reproducir o pausar música">
+            <span class="disco-centro"></span>
+          </button>
+          <p id="estadoMusica">Toca el disco para escuchar la música</p>
+          <audio id="musica" src="audio/musica.mp3" loop preload="none"></audio>
+        </div>
+      </header>
+
+      <section class="tarjeta contador-tarjeta">
+        <div class="contador-contenido">
+          <p class="eyebrow">La cuenta regresiva ha comenzado</p>
+          <h2>Faltan para mi gran día</h2>
+          
+          <div class="contador" aria-live="polite">
+            <div><strong id="dias">--</strong><span>Días</span></div>
+            <div><strong id="horas">--</strong><span>Horas</span></div>
+            <div><strong id="minutos">--</strong><span>Minutos</span></div>
+            <div><strong id="segundos">--</strong><span>Segundos</span></div>
+          </div>
+        </div>
+      
+        <div class="quinceanera-contenedor">
+          <img src="images/quinceanera.png" alt="María Victoria" class="quinceanera-imagen">
+        </div>
+      </section>
+
+      <section class="tarjeta detalles">
+        <h2>Una noche para recordar</h2>
+        
+        <div class="detalles-grupo">
+          <div class="detalle">
+            <span class="icono">🗓️</span>
+            <div><b>Fecha</b><p>Sábado, 28 de noviembre de 2026</p></div>
+          </div>
+          <div class="detalle">
+            <span class="icono">🕜</span>
+            <div><b>Hora</b><p>8:30 p. m.</p></div>
+          </div>
+          <div class="detalle">
+            <span class="icono">📍</span>
+            <div><b>Lugar</b><p>Barrio Floralia<br>Calle 78 # 3BN-32, Cali</p></div>
+          </div>
+        </div>
+
+        <a class="boton boton-rosa" 
+   href="https://www.google.com/maps/search/?api=1&query=3.496583%2C-76.492444" 
+   target="_blank" 
+   rel="noopener">
+  ⌖ Cómo llegar por Google Maps
+</a>
+      </section>
+
+      <section class="tarjeta confirmar">
+        <img src="images/corona1.png" alt="Corona" class="icono-corona">
+        <h2>Confirma tu asistencia</h2>
+        <p class="mensaje-emotivo">Tu presencia en este día tan especial significa mucho para mí. Cumplir 15 años es comenzar una etapa llena de sueños, ilusiones y momentos por vivir. Me haría muy feliz compartir esta noche contigo. Gracias por ser parte de mi historia.</p>
+        <button class="boton boton-vino" id="mostrarFormulario">♡ Confirmar asistencia</button>
+        <form id="formularioRSVP" class="formulario oculto">
+          <label for="nombreInvitado">Tu nombre</label>
+          <input id="nombreInvitado" name="nombre" type="text" placeholder="Escribe tu nombre completo" required maxlength="100">
+          <fieldset>
+            <legend>¿Vas a asistir?</legend>
+            <label class="opcion"><input type="radio" name="asistencia" value="Asistiré" required> <span>Asistiré, nos vemos ahí!</span></label>
+            <label class="opcion"><input type="radio" name="asistencia" value="Lo siento, no podré ir"> <span>Lo siento, no podré ir</span></label>
+          </fieldset>
+          <button class="boton boton-vino" type="submit">Enviar respuesta por WhatsApp</button>
+          <p class="nota-formulario">Al enviar, se abrirá WhatsApp con tu respuesta lista para enviar al número de confirmaciones.</p>
+        </form>
+        <p id="mensajeGuardado" class="mensaje-guardado oculto" role="status">♡ Tu respuesta está lista. En WhatsApp, pulsa “Enviar” para que María Victoria reciba tu confirmación. ¡Gracias!</p>
+      </section>
+
+      <section class="tarjeta regalo">
+        <img src="images/regalo.png" alt="Regalo" class="icono-regalo">
+        <h2>Mi regalo más grande<br><em>es tu presencia</em></h2>
+        <p>Pero si deseas tener un detalle conmigo, te doy esta opción:</p>
+        <div class="lluvia">LLUVIA DE<br>SOBRES</div>
+        <p class="corazon">💖</p>
+      </section>
+
+      <footer class="cierre tarjeta">
+        <img src="images/corona1.png" alt="Corona" class="icono-corona">
+        <p class="cierre-corazon">💖</p>
+        <h2>Te esperamos</h2>
+        <p>Con cariño, María Victoria</p>
+      </footer>
+    </section>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap');
+
+:root {
+  --rosa-claro: #fff1f0;
+  --rosa: #e9b7bc;
+  --rosa-medio: #d58b99;
+  --rosa-oscuro: #a94f68;
+  --vino: #87374f;
+  --texto: #5e2939;
+  --dorado: #c69a75;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--texto); background: #f8e0df; font-family: 'Cormorant Garamond', Georgia, serif; }
+button, input { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+main { width: 100%; overflow: hidden; }
+
+/* --- Pantalla Portada / Sobre --- */
+.sobre-pantalla {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 20px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(rgba(135, 55, 79, 0.12), rgba(135, 55, 79, 0.22)),
+              url('../images/fondo-sobre.jpg') center/cover no-repeat;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.sobre-pantalla.fade-out {
+  opacity: 0;
+  transform: scale(1.05);
+  pointer-events: none;
+}
+
+/* --- Ajuste de Posicionamiento de la Portada --- */
+.sobre-contenido {
+  position: relative;
+  z-index: 2;
+  max-width: 460px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Texto superior "Con mucha ilusión..." más grande --- */
+.hero .eyebrow {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--texto);
+  margin: 10px 0 6px 0;
+  letter-spacing: 0.5px;
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95);
+}
+
+/* Encabezado y Nombre ARRIBA del sello */
+.sobre-intro {
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--vino);
+  margin: 0 0 5px 0;
+  text-shadow: 0 1px 6px rgba(255, 255, 255, 0.95);
+}
+
+/* --- Tipografía Cursiva --- */
+.nombre-portada {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(3.2rem, 11vw, 4.8rem);
+  color: var(--vino);
+  margin: 0 0 125px 0;
+  line-height: 1.1;
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.85);
+}
+
+/* Frase, Botón e Instrucción DEBAJO del sello */
+.frase-portada {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.35;
+  margin: 0 0 18px 0;
+  font-style: italic;
+  color: var(--texto);
+  font-weight: 600;
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95);
+}
+
+.boton { display:inline-flex; justify-content:center; align-items:center; text-align:center; gap:8px; text-decoration:none; border:0; border-radius:999px; padding:13px 22px; min-height:48px; cursor:pointer; transition:transform .2s, box-shadow .2s; font-family:Montserrat,sans-serif; font-size:.82rem; font-weight:600; }
+.boton:active { transform:scale(.98); }
+.boton-claro {
+  color: var(--vino);
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #c77e8d;
+  box-shadow: 0 6px 20px rgba(137, 71, 91, 0.25);
+  padding: 14px 28px;
+  font-size: 0.88rem;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+.instruccion {
+  font-family: Montserrat, sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0;
+  color: var(--vino);
+  font-weight: 600;
+  text-shadow: 0 1px 6px rgba(255, 255, 255, 0.95);
+}
+
+.oculto { display:none !important; }
+
+/* --- Contenedor Principal (Organiza y separa cada tarjeta) --- */
+.invitacion {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px 10px;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* --- Sección de Bienvenida (Hero) --- */
+.hero {
+  min-height: 85vh;
+  padding: 45px 22px 35px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background: url('../images/fondo.jpg') center/cover no-repeat;
+  border-radius: 20px;
+  border: 1px solid rgba(198, 154, 117, 0.4);
+  box-shadow: 0 8px 25px rgba(124, 57, 69, 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.destellos { font-size:26px; color:var(--dorado); }
+
+/* --- Título "Mis 15 años" --- */
+.hero h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.6rem;
+  font-weight: 500;
+  color: var(--texto);
+  margin: 4px 0 12px 0;
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95);
+}
+
+/* --- Estilo especial destacado para el 15 --- */
+.hero h1 span {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.8rem;
+  font-weight: 400;
+  color: var(--dorado, #c69a75);
+  display: inline-block;
+  margin: 0 4px;
+  vertical-align: middle;
+  text-shadow: 0 2px 10px rgba(255, 255, 255, 1);
+}
+
+/* --- Ajuste para la imagen de la corona --- */
+.icono-corona {
+  width: 75px;
+  height: auto;
+  margin: 6px auto 12px auto;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(135, 55, 79, 0.15));
+}
+
+/* --- Ajuste para la imagen del regalo --- */
+.icono-regalo {
+  width: 75px;
+  height: auto;
+  margin: 6px auto 12px auto;
+  display: block;
+  filter: drop-shadow(0 2px 4px rgba(135, 55, 79, 0.15));
+}
+
+.corona { color:var(--dorado); font-size:32px; }
+.hero h2 { font-size:clamp(3.3rem,12vw,5.2rem); color:var(--vino); margin:0; }
+.hero-frase { line-height:1.5; font-size:1.2rem; margin:8px 0 18px; }
+.disco-contenedor { display:flex; flex-direction:column; align-items:center; gap:8px; }
+.disco { width:100px; height:100px; border-radius:50%; border:5px solid #2b2225; background:repeating-radial-gradient(circle,#151216 0 4px,#393035 5px 7px); box-shadow:0 7px 15px #7d3c4b44; position:relative; cursor:pointer; animation:rotar 5s linear infinite; animation-play-state:paused; }
+.disco.sonando { animation-play-state:running; }
+.disco-centro { position:absolute; inset:34px; border-radius:50%; background:#d9919c; border:5px solid #f5c9c8; }
+#estadoMusica { font-family:Montserrat,sans-serif; font-size:.72rem; }
+@keyframes rotar { to { transform:rotate(360deg); } }
+
+/* --- Fondo e Iconografía de cada Tarjeta --- */
+.tarjeta {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 40px 20px 35px;
+  border-radius: 20px;
+  background: url('../images/fondo.jpg') center/cover no-repeat;
+  border: 1px solid rgba(198, 154, 117, 0.4);
+  box-shadow: 0 8px 25px rgba(135, 55, 79, 0.18);
+  text-align: center;
+  overflow: hidden;
+}
+
+.tarjeta h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.8rem, 9vw, 3.8rem);
+  color: var(--vino);
+  margin: 8px 0 16px;
+  line-height: 1.1;
+  font-weight: 400;
+}
+
+/* --- Estilos de la Cuenta Regresiva --- */
+.contador {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.contador div {
+  background: rgba(240, 193, 196, 0.6);
+  border-radius: 12px;
+  padding: 12px 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.contador strong {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.2rem, 4.5vw, 1.6rem);
+  font-weight: 600;
+  color: var(--vino);
+}
+
+.contador span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--texto);
+}
+
+/* --- Grupo de Detalles Alineados Rectos --- */
+.detalles-grupo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 320px;
+  margin: 15px auto 20px auto;
+}
+
+.detalle {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  width: 100%;
+  margin: 8px 0;
+}
+
+.icono {
+  color: var(--rosa-oscuro);
+  font-size: 2rem;
+  width: 38px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.detalle b { font-family:Montserrat,sans-serif; font-size:.9rem; }
+.detalle p { font-size:1.15rem; margin:4px 0 0; line-height:1.4; }
+
+.boton-rosa { color:#fff8f3; background:var(--rosa-oscuro); margin:12px 0; }
+.ayuda-mapa { font-size:1rem; font-style:italic; margin:4px 0 12px; }
+
+.mapa {
+  width: 100%;
+  max-width: 360px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(198, 154, 117, 0.5);
+  box-shadow: 0 4px 12px rgba(124, 57, 69, 0.1);
+  margin: 12px auto 0 auto;
+}
+
+.mapa iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.nota-mapa, .nota-formulario { font-family:Montserrat,sans-serif; font-size:.7rem; line-height:1.5; opacity:.8; }
+
+.mensaje-emotivo {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: var(--texto);
+  max-width: 500px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+
+.boton-vino { background:linear-gradient(110deg,#a8536a,#87374f); color:white; box-shadow:0 6px 14px #87374f22; }
+.formulario { text-align:left; max-width:440px; margin:24px auto 0; }
+.formulario > label, .formulario legend { display:block; font-family:Montserrat,sans-serif; font-size:.83rem; font-weight:600; margin:16px 0 8px; }
+.formulario input[type="text"] { width:100%; padding:13px 14px; border-radius:99px; border:1px solid #d7a3a7; background:#fffaf8; color:var(--texto); }
+.formulario fieldset { border:0; padding:0; margin:12px 0 22px; }
+.opcion { display:flex; align-items:center; gap:10px; padding:10px 4px; cursor:pointer; font-size:1.08rem; }
+.opcion input { accent-color:var(--vino); width:18px; height:18px; }
+.formulario .boton { width:100%; }
+.mensaje-guardado { padding:18px; background:#f2cfd0; border-radius:12px; font-size:1.15rem; line-height:1.5; }
+
+/* --- Sección Lluvia de Sobres --- */
+.regalo {
+  padding: 35px 22px;
+  text-align: center;
+}
+.regalo em { font-family:'Great Vibes',cursive; font-size:2.5rem; color:var(--vino); font-weight:400; }
+.regalo p {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--texto);
+  margin-bottom: 22px;
+}
+.lluvia { 
+  display:inline-block; 
+  border:2px solid var(--dorado); 
+  border-radius:18px; 
+  padding:18px 30px; 
+  margin:12px 0; 
+  color:var(--vino); 
+  font-family:Montserrat, sans-serif; 
+  font-size:1.2rem; 
+  font-weight:600; 
+  letter-spacing:2px; 
+  background:#fff3ee; 
+  box-shadow:0 4px 15px rgba(198, 154, 117, 0.15); 
+}
+.corazon {
+  color: var(--rosa-oscuro);
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+/* --- Sección Final de Cierre --- */
+.cierre {
+  padding: 55px 20px 60px;
+  text-align: center;
+}
+.cierre h2 { font-size:clamp(3.5rem,13vw,5.7rem); color:var(--vino); margin:10px 0; }
+.cierre p:last-child { font-size:1.1rem; }
+.cierre-corazon { color:var(--rosa-oscuro); }
+
+/* --- Sección Cuenta Regresiva con Imagen --- */
+.contador-tarjeta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 2.5rem 1rem 0 1rem;
+  min-height: 520px;
+  text-align: center;
+}
+
+.contador-contenido {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.quinceanera-contenedor {
+  position: relative;
+  width: 100%;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1;
+}
+
+.quinceanera-imagen {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+@media (min-width:650px) {
+  .sobre-pantalla { min-height:100vh; }
+  .tarjeta { margin:0; padding:45px 34px; }
+  .hero { padding-top:60px; }
+}
+
+@media (max-width: 600px) {
+  .contador-tarjeta {
+    min-height: 460px;
+    padding: 1.8rem 0.5rem 0 0.5rem;
+  }
+  .quinceanera-imagen {
+    max-width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:.01ms !important; scroll-behavior:auto !important; } }
