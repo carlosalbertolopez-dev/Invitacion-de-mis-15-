@@ -1,15 +1,28 @@
+/* --- Importación de fuentes desde Google Fonts --- */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap');
 
+/* --- Variables globales de colores --- */
 :root {
-  --rosa-claro: #fff1f0;
-  --rosa: #e9b7bc;
-  --rosa-medio: #d58b99;
-  --rosa-oscuro: #a94f68;
-  --vino: #87374f;
-  --texto: #5e2939;
-  --dorado: #c69a75;
+  --rosa-claro: #fff1f0;   /* Fondo muy suave */
+  --rosa: #e9b7bc;         /* Rosa pastel */
+  --rosa-medio: #d58b99;   /* Rosa intermedio */
+  --rosa-oscuro: #a94f68;  /* Rosa fuerte */
+  --vino: #70263b;         /* Vino intenso */
+  --texto: #35121c;        /* Texto principal oscuro */
+  --dorado: #b8855e;       /* Dorado elegante */
 }
 
+/* --- Párrafos generales más legibles y con contraste --- */
+p {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.3rem;      /*  Ligeramente más grandes */
+  font-weight: 700;       /*  Negrita para que resalten */
+  color: var(--texto);
+  line-height: 1.5;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95); /*  Brillo blanco de fondo para contraste */
+}
+
+/* --- Reset y estilos base --- */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; color: var(--texto); background: #f8e0df; font-family: 'Cormorant Garamond', Georgia, serif; }
@@ -17,9 +30,9 @@ button, input { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
 main { width: 100%; overflow: hidden; }
 
-/* --- Pantalla Portada / Sobre --- */
+/* --- Pantalla inicial (sobre) --- */
 .sobre-pantalla {
-  min-height: 100svh;
+  min-height: 100svh;   /* Ocupa toda la pantalla */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,7 +52,7 @@ main { width: 100%; overflow: hidden; }
   pointer-events: none;
 }
 
-/* --- Ajuste de Posicionamiento de la Portada --- */
+/* --- Contenido dentro del sobre --- */
 .sobre-contenido {
   position: relative;
   z-index: 2;
@@ -52,15 +65,15 @@ main { width: 100%; overflow: hidden; }
   align-items: center;
 }
 
-/* --- Texto superior "Con mucha ilusión..." más grande --- */
+/* Texto superior "Con mucha ilusión..." */
 .hero .eyebrow {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.45rem;
-  font-weight: 600;
-  color: var(--texto);
+  font-size: 1.5rem;
+  font-weight: 700;        /* Negrita con más cuerpo */
+  color: var(--texto);     /* Color vino oscuro #35121c */
   margin: 10px 0 6px 0;
   letter-spacing: 0.5px;
-  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 6px rgba(255, 255, 255, 1); /* Sombra blanca de fondo */
 }
 
 /* Encabezado y Nombre ARRIBA del sello */
@@ -75,7 +88,7 @@ main { width: 100%; overflow: hidden; }
   text-shadow: 0 1px 6px rgba(255, 255, 255, 0.95);
 }
 
-/* --- Tipografía Cursiva --- */
+/* --- Nombre principal en cursiva elegante --- */
 .nombre-portada {
   font-family: 'Great Vibes', cursive;
   font-size: clamp(3.2rem, 11vw, 4.8rem);
@@ -85,7 +98,7 @@ main { width: 100%; overflow: hidden; }
   text-shadow: 0 2px 12px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.85);
 }
 
-/* Frase, Botón e Instrucción DEBAJO del sello */
+/* Frase, Botón e Instrucción debajo del sello */
 .frase-portada {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.25rem;
@@ -97,6 +110,7 @@ main { width: 100%; overflow: hidden; }
   text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95);
 }
 
+/* --- Botones generales --- */
 .boton { display:inline-flex; justify-content:center; align-items:center; text-align:center; gap:8px; text-decoration:none; border:0; border-radius:999px; padding:13px 22px; min-height:48px; cursor:pointer; transition:transform .2s, box-shadow .2s; font-family:Montserrat,sans-serif; font-size:.82rem; font-weight:600; }
 .boton:active { transform:scale(.98); }
 .boton-claro {
@@ -195,15 +209,33 @@ main { width: 100%; overflow: hidden; }
 
 .corona { color:var(--dorado); font-size:32px; }
 .hero h2 { font-size:clamp(3.3rem,12vw,5.2rem); color:var(--vino); margin:0; }
-.hero-frase { line-height:1.5; font-size:1.2rem; margin:8px 0 18px; }
+/* Frase "Un sueño hecho realidad..." */
+.hero-frase {
+  line-height: 1.5;
+  font-size: 1.35rem;
+  font-weight: 700;        /* Negrita clara */
+  color: var(--texto);
+  margin: 12px 0 20px;
+  text-shadow: 0 1px 6px rgba(255, 255, 255, 1);
+}
+
+/* --- Disco de música --- */
 .disco-contenedor { display:flex; flex-direction:column; align-items:center; gap:8px; }
 .disco { width:100px; height:100px; border-radius:50%; border:5px solid #2b2225; background:repeating-radial-gradient(circle,#151216 0 4px,#393035 5px 7px); box-shadow:0 7px 15px #7d3c4b44; position:relative; cursor:pointer; animation:rotar 5s linear infinite; animation-play-state:paused; }
 .disco.sonando { animation-play-state:running; }
 .disco-centro { position:absolute; inset:34px; border-radius:50%; background:#d9919c; border:5px solid #f5c9c8; }
-#estadoMusica { font-family:Montserrat,sans-serif; font-size:.72rem; }
+/* Texto de ayuda debajo del disco de música */
+#estadoMusica {
+  font-family: Montserrat, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;        /* Negrita para el texto pequeño sobre flores */
+  color: var(--texto);
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 1);
+  margin-top: 6px;
+}
 @keyframes rotar { to { transform:rotate(360deg); } }
 
-/* --- Fondo e Iconografía de cada Tarjeta --- */
+/* --- Fondo e Iconografía de cada Tarjetas generales --- */
 .tarjeta {
   height: auto;
   display: flex;
@@ -290,9 +322,24 @@ main { width: 100%; overflow: hidden; }
   flex-shrink: 0;
 }
 
-.detalle b { font-family:Montserrat,sans-serif; font-size:.9rem; }
-.detalle p { font-size:1.15rem; margin:4px 0 0; line-height:1.4; }
+.detalle b {
+  font-family: Montserrat, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--vino);
+  text-transform: uppercase;
+}
+/* --- Textos de Fecha, Hora y Lugar --- */
+.detalle p {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--texto);
+  margin: 2px 0 0;
+  line-height: 1.4;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95);
+}
 
+/* --- Boton secundario --- */
 .boton-rosa { color:#fff8f3; background:var(--rosa-oscuro); margin:12px 0; }
 .ayuda-mapa { font-size:1rem; font-style:italic; margin:4px 0 12px; }
 
@@ -313,25 +360,44 @@ main { width: 100%; overflow: hidden; }
   border: 0;
 }
 
-.nota-mapa, .nota-formulario { font-family:Montserrat,sans-serif; font-size:.7rem; line-height:1.5; opacity:.8; }
-
-.mensaje-emotivo {
-  font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.25rem;
-  line-height: 1.5;
+.nota-mapa, .nota-formulario, .ayuda-mapa, #estadoMusica {
+  font-family: Montserrat, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;       /* 👈 Negrita para notas pequeñas */
   color: var(--texto);
-  max-width: 500px;
-  margin: 0 auto 24px;
-  text-align: center;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95);
 }
 
+/* --- Mensaje emotivo de asistencia --- */
+.mensaje-emotivo {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.35rem;     /* 👈 Más grande */
+  font-weight: 700;       /* 👈 Más negrita */
+  color: var(--texto);    /* 👈 Color oscuro */
+  line-height: 1.55;
+  max-width: 480px;
+  margin: 0 auto 24px;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.95); /* 👈 Sombra para destacar sobre el fondo rosado */
+}
+/* --- Boton secundario --- */
 .boton-vino { background:linear-gradient(110deg,#a8536a,#87374f); color:white; box-shadow:0 6px 14px #87374f22; }
+
+/* --- Formulario RSVP --- */
 .formulario { text-align:left; max-width:440px; margin:24px auto 0; }
-.formulario > label, .formulario legend { display:block; font-family:Montserrat,sans-serif; font-size:.83rem; font-weight:600; margin:16px 0 8px; }
+/* --- Textos de los formularios y notas secundarias --- */
+.formulario > label, .formulario legend {
+  color: var(--texto);
+  font-weight: 700;
+}
 .formulario input[type="text"] { width:100%; padding:13px 14px; border-radius:99px; border:1px solid #d7a3a7; background:#fffaf8; color:var(--texto); }
 .formulario fieldset { border:0; padding:0; margin:12px 0 22px; }
 .opcion { display:flex; align-items:center; gap:10px; padding:10px 4px; cursor:pointer; font-size:1.08rem; }
 .opcion input { accent-color:var(--vino); width:18px; height:18px; }
+.opcion span {
+  font-weight: 600;
+  color: var(--texto);
+}
 .formulario .boton { width:100%; }
 .mensaje-guardado { padding:18px; background:#f2cfd0; border-radius:12px; font-size:1.15rem; line-height:1.5; }
 
