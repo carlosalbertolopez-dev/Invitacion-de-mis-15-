@@ -15,7 +15,7 @@
 /* --- Párrafos generales más legibles y con contraste --- */
 p {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.3rem;      /*  Ligeramente más grandes */
+  font-size: 1.4rem;      /*  Ligeramente más grandes */
   font-weight: 700;       /*  Negrita para que resalten */
   color: var(--texto);
   line-height: 1.5;
@@ -191,7 +191,7 @@ main { width: 100%; overflow: hidden; }
 
 /* --- Ajuste para la imagen de la corona --- */
 .icono-corona {
-  width: 75px;
+  width: 80px;
   height: auto;
   margin: 6px auto 12px auto;
   display: block;
@@ -200,7 +200,7 @@ main { width: 100%; overflow: hidden; }
 
 /* --- Ajuste para la imagen del regalo --- */
 .icono-regalo {
-  width: 75px;
+  width: 80px;
   height: auto;
   margin: 6px auto 12px auto;
   display: block;
@@ -227,7 +227,7 @@ main { width: 100%; overflow: hidden; }
 /* Texto de ayuda debajo del disco de música */
 #estadoMusica {
   font-family: Montserrat, sans-serif;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: 700;        /* Negrita para el texto pequeño sobre flores */
   color: var(--texto);
   text-shadow: 0 1px 4px rgba(255, 255, 255, 1);
@@ -360,9 +360,9 @@ main { width: 100%; overflow: hidden; }
   border: 0;
 }
 
-.nota-mapa, .nota-formulario, .ayuda-mapa, #estadoMusica {
+.nota-mapa, .nota-formulario, .ayuda-mapa {
   font-family: Montserrat, sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 700;       /* 👈 Negrita para notas pequeñas */
   color: var(--texto);
   text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95);
@@ -397,6 +397,7 @@ main { width: 100%; overflow: hidden; }
 .opcion span {
   font-weight: 600;
   color: var(--texto);
+  font-size:1.15rem;
 }
 .formulario .boton { width:100%; }
 .mensaje-guardado { padding:18px; background:#f2cfd0; border-radius:12px; font-size:1.15rem; line-height:1.5; }
@@ -440,7 +441,7 @@ main { width: 100%; overflow: hidden; }
   text-align: center;
 }
 .cierre h2 { font-size:clamp(3.5rem,13vw,5.7rem); color:var(--vino); margin:10px 0; }
-.cierre p:last-child { font-size:1.1rem; }
+.cierre p:last-child { font-size:1.3rem; }
 .cierre-corazon { color:var(--rosa-oscuro); }
 
 /* --- Sección Cuenta Regresiva con Imagen --- */
@@ -449,10 +450,10 @@ main { width: 100%; overflow: hidden; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   overflow: hidden;
   padding: 2.5rem 1rem 0 1rem;
-  min-height: 520px;
+  min-height: auto;
   text-align: center;
 }
 
@@ -465,7 +466,7 @@ main { width: 100%; overflow: hidden; }
 .quinceanera-contenedor {
   position: relative;
   width: 100%;
-  margin-top: 1.5rem;
+  margin-top: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -489,7 +490,7 @@ main { width: 100%; overflow: hidden; }
 
 @media (max-width: 600px) {
   .contador-tarjeta {
-    min-height: 460px;
+    min-height: auto;
     padding: 1.8rem 0.5rem 0 0.5rem;
   }
   .quinceanera-imagen {
